@@ -284,6 +284,7 @@ then
 		info "Installing python packages (logging to $OUTFILE)!"
 	fi
 
+
 	if [ $WHEELS -eq 1 ]
 	then
 		install_wheels
@@ -294,7 +295,10 @@ then
 	(python --version 2>&1| grep -q PyPy) && TO_INSTALL=${TO_INSTALL// angr-management/}
 	[ -n "$TRAVIS" ] && TO_INSTALL=${TO_INSTALL// angr-management/}
 
-	if pip install $PIP_OPTIONS -v ${TO_INSTALL// / -e } >> $OUTFILE 2>> $ERRFILE
+    info $TO_INSTALL
+
+	if pip install $PIP_OPTIONS -v ${TO_INSTALL// / -e } 
+        #>> $OUTFILE 2>> $ERRFILE
 	then
 		info "Success!"
 		[ $VERBOSE -eq 1 ] || rm -f $OUTFILE
