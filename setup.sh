@@ -31,7 +31,7 @@ DEBS=${DEBS-virtualenvwrapper python2.7-dev build-essential libxml2-dev libxslt1
 REPOS=${REPOS-ana idalink cooldict mulpyplexer capstone unicorn monkeyhex superstruct archinfo vex pyvex cle claripy simuvex angr angr-management angr-doc binaries}
 
 ORIGIN_REMOTE=$(git remote -v | grep origin | head -n1 | awk '{print $2}' | sed -e "s/\/angr-dev.*//")
-REMOTES=${REMOTES-${ORIGIN_REMOTE/\/github.com/\/git:@github.com} https://git:@github.com/zardus https://git:@github.com/rhelmot}
+REMOTES=${REMOTES-${ORIGIN_REMOTE/\/github.com/\/git:@github.com} https://git:@github.com/zardus https://git:@github.com/rhelmot https://git:@github.com/angr}
 
 
 INSTALL_REQS=0
